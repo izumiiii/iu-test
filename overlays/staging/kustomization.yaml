@@ -1,0 +1,13 @@
+namePrefix: staging-
+commonLabels:
+  variant: staging
+  org: acmeCorporation
+commonAnnotations:
+  note: Hello, I am staging!
+resources:
+- ../../base
+patchesStrategicMerge:
+- map.yaml
+images:
+- name: izumiiiii/hello
+  newTag: "11"
