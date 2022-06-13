@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging
-  namespace: argocd
+  name: staging-hello
+  namespace: staging
   annotations:
     argocd-image-updater.argoproj.io/image-list: izumiiiii/hello
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/write-back-target: kustomization
-    argocd-image-updater.argoproj.io/git-branch: :image-updater{{range .Images}}-{{.Name}}-{{.NewTag}}{{end}}
+    argocd-image-updater.argoproj.io/git-branch: master:image-updater-{{.SHA256}}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: staging
     server: https://kubernetes.default.svc
   project: default
   source:
     path: overlays/staging
-    repoURL: https://github.com/izumiiii/app-of-apps-test.git
+    repoURL: https://github.com/izumiiii/iu-test.git
     targetRevision: HEAD
   syncPolicy:
     automated:
