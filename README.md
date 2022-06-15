@@ -13,7 +13,7 @@ helm install argocd charts/argo-cd/
 Access ArgoCD Web UI
 
 ```
-kubectl port-forward svc/argo-cd-argocd-server 8080:443
+kubectl port-forward svc/argocd-server 8080:443
 kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
