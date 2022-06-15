@@ -9,3 +9,11 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+      # -- Changing the Git commit message
+      gitCommitTemplate: |
+        Application Deploy: automatic update of {{ .AppName }}
+
+        {{ range .AppChanges -}}
+        updates image {{ .Image }} tag '{{ .OldTag }}' to '{{ .NewTag }}'
+        test {{ .SHA256 }}
+        {{ end -}}

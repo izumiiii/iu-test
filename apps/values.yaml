@@ -1,8 +1,0 @@
-config:
-  # -- Changing the Git commit message
-  gitCommitTemplate: |
-    build: automatic update of {{ .AppName }}
-
-    {{ range .AppChanges -}}
-    updates image {{ .Image }} tag '{{ .OldTag }}' to '{{ .NewTag }}'
-    {{ end -}}
