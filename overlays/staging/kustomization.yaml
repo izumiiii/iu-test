@@ -10,4 +10,4 @@ patchesStrategicMerge:
 - map.yaml
 images:
 - name: izumiiiii/hello
-  newTag: "11"
+  newTag: "15"
