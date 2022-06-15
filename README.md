@@ -5,9 +5,9 @@
 install ArgoCD
 
 ```
-helm repo add argo-cd https://argoproj.github.io/argo-helm
+helm repo add argocd https://argoproj.github.io/argo-helm
 helm dep update charts/argo-cd/
-helm install argo-cd charts/argo-cd/
+helm install argocd charts/argo-cd/
 ```
 
 Access ArgoCD Web UI
