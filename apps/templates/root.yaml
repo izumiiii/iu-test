@@ -7,6 +7,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: hello=izumiiiii/hello:stg
     argocd-image-updater.argoproj.io/hello.force-update: "true"
     argocd-image-updater.argoproj.io/write-back-target: kustomization
+    argocd-image-updater.argoproj.io/argocd.force-update: 'true'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
