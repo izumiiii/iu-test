@@ -4,11 +4,11 @@ metadata:
   name: staging-hello
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: hello=izumiiiii/hello
-    argocd-image-updater.argoproj.io/hello.update-strategy: stg
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/image-list: hello=izumiiiii/hello:stg
+    argocd-image-updater.argoproj.io/hello.update-strategy: latest
+    argocd-image-updater.argoproj.io/hello.force-update: "true"
+    # argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/write-back-target: kustomization
-    argocd-image-updater.argoproj.io/git-branch: :staging
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
